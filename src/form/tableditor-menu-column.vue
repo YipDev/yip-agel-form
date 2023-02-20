@@ -12,9 +12,9 @@
       <i v-if="scope.row._loading_" class="el-icon-loading"></i>
       <template v-else>
         <el-link v-if="edit" size="mini" type="primary" style="margin:0px 3px" @click="editRow(scope)">
-          {{scope.row._view_?'编辑':'保存'}}
+          {{scope.row._view_?'Edit':'Save'}}
         </el-link>
-        <el-link v-if="del" size="mini" type="primary" style="margin:0px 3px" @click="delRow(scope)">删除</el-link>
+        <el-link v-if="del" size="mini" type="primary" style="margin:0px 3px" @click="delRow(scope)">Del</el-link>
       </template>
     </template>
   </el-table-column>
@@ -89,8 +89,8 @@ export default {
             this.delConfirm == "string" ? this.delConfirm : "确定删除数据？",
             "提示",
             {
-              confirmButtonText: "确定",
-              cancelButtonText: "取消",
+              confirmButtonText: "Confirm",
+              cancelButtonText: "Cancel",
               type: "warning",
             }
           )
