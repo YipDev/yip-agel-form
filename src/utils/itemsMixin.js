@@ -82,7 +82,7 @@ export default {
         formItem.rules = [
           {
             required: true,
-            message: label + "必填",
+            message: label + "is required",
             trigger: inputArr.includes(this.getName(item)) ? "blur" : "change",
           },
         ]
@@ -149,10 +149,10 @@ export default {
       let name = this.getName(item)
       let label = typeof item.label == "string" ? item.label : ""
       if (inputArr.includes(name)) {
-        return "请输入" + label
+        return "Input" + label
       }
       if (selectArr.includes(name)) {
-        return "请选择" + label
+        return "Select" + label
       }
     },
     getName(item, deep = true) {
