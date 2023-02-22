@@ -2,7 +2,7 @@
   <el-table-column v-bind="$attrs" :width="width" :align="align">
     <template v-slot:header="scope">
       <div style="display: flex; align-items: center;justify-content: center;">
-        <span style="margin-right:5px">操作</span>
+        <span style="margin-right:5px">OP</span>
         <el-link v-if="add" size="mini" type="primary" @click="addRow(scope)">
           <i class="el-icon-plus"></i>
         </el-link>
@@ -14,7 +14,7 @@
         <el-link v-if="edit" size="mini" type="primary" style="margin:0px 3px" @click="editRow(scope)">
           {{scope.row._view_?'Edit':'Save'}}
         </el-link>
-        <el-link v-if="del" size="mini" type="primary" style="margin:0px 3px" @click="delRow(scope)">Del</el-link>
+        <el-link v-if="del" size="mini" type="primary" style="margin:0px 3px" @click="delRow(scope)">Delete</el-link>
       </template>
     </template>
   </el-table-column>
@@ -86,8 +86,8 @@ export default {
       if (this.delConfirm) {
         this.$msgbox
           .confirm(
-            this.delConfirm == "string" ? this.delConfirm : "确定删除数据？",
-            "提示",
+            this.delConfirm == "string" ? this.delConfirm : "Are you sure to delete？",
+            "Caution",
             {
               confirmButtonText: "Confirm",
               cancelButtonText: "Cancel",
