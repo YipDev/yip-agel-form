@@ -22,7 +22,9 @@
     "publish": "npm publish",
     "setnpmtb": "npm config set registry http://registry.npm.taobao.org/"
   },
-  "dependencies": {},
+  "dependencies": {
+    "element-ui-el-table-draggable": "^1.2.10"
+  },
   "peerDependencies": {},
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",

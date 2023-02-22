@@ -1,5 +1,6 @@
 <template>
  <!-- eslint-disable vue/no-use-v-if-with-v-for,vue/no-confusing-v-for-v-if -->
+  <el-table-draggable>
   <el-table class="agel-form-tableditor" ref="elTable" :value="undefined" :data="dynamicData" v-bind="$attrs" :border="border" v-on="$listeners">
     <slot name="prepend"></slot>
     <el-table-column v-for="(item,colIndex) in agItems" v-if="getVif({item,colIndex})" v-bind="getLayoutItemAttrs(item)" label="" :key="item.prop">
@@ -12,12 +13,14 @@
     </el-table-column>
     <slot name="append"></slot>
   </el-table>
+  </el-table-draggable>
 </template>
  
 <script>
 import itemsMinxin from "../utils/itemsMixin";
 import renderComponent from "./render-component";
 import { tableColumnPropKeys } from "../utils/const";
+import ElTableDraggable from "element-ui-el-table-draggable";
 
 export default {
   name: "agel-form-tableditor",
@@ -25,6 +28,7 @@ export default {
   inheritAttrs: false,
   components: {
     renderComponent,
+    ElTableDraggable,
   },
   props: {
     border: {
