@@ -23,7 +23,6 @@
     "setnpmtb": "npm config set registry http://registry.npm.taobao.org/"
   },
   "dependencies": {
-    // "element-ui-el-table-draggable": "^1.2.10",
     "el-table-draggable": "^1.4.12"
   },
   "peerDependencies": {},
