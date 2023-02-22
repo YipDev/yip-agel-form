@@ -20,7 +20,7 @@
 import itemsMinxin from "../utils/itemsMixin";
 import renderComponent from "./render-component";
 import { tableColumnPropKeys } from "../utils/const";
-import ElTableDraggable from "element-ui-el-table-draggable";
+import ElTableDraggable from "el-table-draggable";
 
 export default {
   name: "agel-form-tableditor",
