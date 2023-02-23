@@ -1,7 +1,7 @@
 <template>
  <!-- eslint-disable vue/no-use-v-if-with-v-for,vue/no-confusing-v-for-v-if -->
-  <el-table-draggable :onMove="onMove">
-  <el-table row-key="id" class="agel-form-tableditor" ref="elTable" :value="undefined" :data="dynamicData" v-bind="$attrs" :border="border" v-on="$listeners">
+  <el-table-draggable>
+  <el-table row-key="id" class="agel-form-tableditor" ref="elTable" :value="undefined"  v-bind="$attrs" :border="border" v-on="$listeners">
     <slot name="prepend"></slot>
     <el-table-column v-for="(item,colIndex) in agItems" v-if="getVif({item,colIndex})" v-bind="getLayoutItemAttrs(item)" label="" :key="item.prop">
       <template v-slot:header="scope">
@@ -55,17 +55,7 @@ export default {
       });
       ok && callback && callback();
     },
-    onMove(evt, originEvt, { dragged, related }) {
-       console.log('--onMove--')
-       console.log(evt,originEvt,dragged,related)
-        if (dragged.level !== 2) {
-          return false;
-        }
-        if (dragged.parent === related.parent) {
-          return true;
-        }
-        return false;
-      }
+    
       
   },
   install(vue) {
