@@ -56,9 +56,11 @@ export default {
       return Array.isArray(this.elForm.model[this.modelProp])
     },
     dynamicData() {
-      const data = this.isDynamic ? this.elForm.model[this.modelProp] : [this.elForm.model]
+      // const data = this.isDynamic ? this.elForm.model[this.modelProp] : [this.elForm.model]
+      const data = this.$attrs.data || this.elForm.model[this.modelProp]
       return data.map(row => {
-        if (this.isDynamic && row._key_ == undefined) row._key_ = guid()
+        // if (this.isDynamic && row._key_ == undefined) row._key_ = guid()
+        if (row._key_ == undefined) row._key_ = guid()
         return row
       })
     },
