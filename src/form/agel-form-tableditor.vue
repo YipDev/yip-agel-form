@@ -22,6 +22,8 @@ import renderComponent from "./render-component";
 import { tableColumnPropKeys } from "../utils/const";
 import ElTableDraggable from "el-table-draggable";
 
+import { guid } from "../utils/utils"
+
 export default {
   name: "agel-form-tableditor",
   mixins: [itemsMinxin],
