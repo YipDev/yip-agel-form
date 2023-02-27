@@ -1,8 +1,8 @@
 <template>
  <!-- eslint-disable vue/no-use-v-if-with-v-for,vue/no-confusing-v-for-v-if -->
   <el-table-draggable>
-  <!-- <el-table  class="agel-form-tableditor" ref="elTable" :value="undefined" :data="dynamicData" v-bind="$attrs" :border="border" v-on="$listeners"> -->
-  <el-table row-key="_key_" class="agel-form-tableditor" ref="elTable" :value="undefined"  v-bind="$attrs" :border="border" v-on="$listeners">
+  <el-table  class="agel-form-tableditor" ref="elTable" :value="undefined" :data="dynamicData" v-bind="$attrs" :border="border" v-on="$listeners">
+  <!-- <el-table row-key="_key_" class="agel-form-tableditor" ref="elTable" :value="undefined"  v-bind="$attrs" :border="border" v-on="$listeners"> -->
     <slot name="prepend"></slot>
     <el-table-column v-for="(item,colIndex) in agItems" v-if="getVif({item,colIndex})" v-bind="getLayoutItemAttrs(item)" label="" :key="item.prop">
       <template v-slot:header="scope">
@@ -50,13 +50,13 @@ export default {
     };
   },
   computed:{
-    // dynamicData() {
-    //       const data = this.$attrs.data || this.elForm.model[this.modelProp]
-    //       return data.map(row => {
-    //         if (row._key_ == undefined) row._key_ = guid()
-    //         return row
-    //       })
-    //     },
+     dynamicData() {
+           const data = this.$attrs.data || this.elForm.model[this.modelProp]
+           return data.map(row => {
+             if (row._key_ == undefined) row._key_ = guid()
+             return row
+           })
+         },
   },
   methods: {
     validateRow(index, callback) {
